@@ -360,7 +360,7 @@ server <- function(input, output, session){
       paste("Deactivation_", Sys.Date(), ".csv", sep="")
     },
     content = function(file) {
-      write.csv(vals$deactivated %>% 
+      utils::write.csv(vals$deactivated %>% 
                   dplyr::select(crop_material_stage, entryid, setid, plot_id, 
                                 set_name, block_name, l1_name, l2_name, l3_name,  field_name, 
                                 isdeactivated, isdeactivated_dsr, isdeactivated_qaqc, plot_deactivated, 
